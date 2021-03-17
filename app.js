@@ -1,0 +1,40 @@
+const express = require('express');
+const path = require('path');
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
+const mongoose = require('mongoose');
+const { mongoUrl, shortOption } = require('./db/config');
+
+const mainRouter = require('./routers/main');
+// const userRouter = require("./routers/user");
+// const counter = require("./middlware/counter");
+
+const app = express();
+
+app.use(
+  session({
+    secret: 'cat',
+    resave: true,
+    saveUninitialized: true,
+    cookie: { secure: false },
+    store: MongoStore.create({ mongoUrl }),
+  }),
+);
+
+app.set('view engine', 'hbs');
+app.set('views', path.join(process.env.PWD, 'views'));
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(process.env.PWD, 'public')));
+
+app.use('/', mainRouter);
+// app.use("/user", userRouter);
+// app.use('/user', books);
+
+app.get('/', (req, res) => res.render('Main'));
+
+app.listen(3000, () => {
+  console.log('Server has started!');
+  mongoose.connect(mongoUrl, shortOption, () => console.log('BASE is OK!!!'));
+});
