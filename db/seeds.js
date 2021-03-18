@@ -92,6 +92,15 @@ async function eventSeeder() {
   await mongoose.disconnect();
 }
 
-usersSeeder();
-placesSeeder();
-eventSeeder();
+async function foo() {
+  const egor = await Users.findOne();
+  egor.visitedEvents.push('6053627007f5ca7c106a28f7');
+  egor.visitedEvents.save();
+  await mongoose.disconnect();
+}
+
+// foo();
+
+// usersSeeder();
+// placesSeeder();
+// eventSeeder();
