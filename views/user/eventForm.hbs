@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="../../public/formStyle/style.css">
+  <link rel="stylesheet" href="/formStyle/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -21,36 +21,39 @@
         <div class="tab" role="tabpanel">
           <!-- Nav tabs -->
           <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active"><a>Предложить место</a></li>
+            <li role="presentation" class="active"><a>создать мероприятие</a></li>
           </ul>
           <!-- Tab panes -->
           <div class="tab-content tabs">
             <div role="tabpanel" class="tab-pane fade in active" id="Section1">
-              <form class="form-horizontal" action="/events" method="POST">
+              <form class="form-horizontal">
+
                 <div class="form-group">
-                  <label for="exampleInputEmail1">ссылка на место</label>
+                  <label for="exampleInputEmail1">Автор</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1">
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Событие</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1">
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Добавить фото</label>
                   <input type="text" class="form-control" id="exampleInputEmail1">
                 </div>
                 
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Средний чек</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1">
+                  <label for="exampleFormControlTextarea1">Описание</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
 
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Геолокация</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1">
-                </div>
-
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Контакты</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1">
-                </div>
                 <div class="form-group">
               
+            
                 </div>
                 <div class="form-group">
-                  <button type="submit" class="btn btn-default">Предложить место</button>
+                  <button type="submit" class="btn btn-default">Добавить событие</button>
                 </div>
               </form>
             </div>
