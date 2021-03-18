@@ -15,6 +15,7 @@ const eventsSchema = new mongoose.Schema({
   creator: { type: mongoose.Schema.Types.ObjectId, ref: 'users' },
   participants: [{ type: mongoose.Schema.Types.ObjectId, ref: 'users' }],
   comments: [String],
+  place: { type: mongoose.Schema.Types.ObjectId, ref: 'places' },
   raiting: [Number],
 });
 
