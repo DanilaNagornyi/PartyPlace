@@ -22,7 +22,7 @@ app.use(
 );
 
 app.set('view engine', 'hbs');
-app.set('views', path.join(process.env.PWD, 'views','user'));
+app.set('views', path.join(process.env.PWD, 'views'));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
