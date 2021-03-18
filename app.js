@@ -6,8 +6,8 @@ const mongoose = require('mongoose');
 const { mongoUrl, shortOption } = require('./db/config');
 
 const mainRouter = require('./routers/main');
-// const userRouter = require("./routers/user");
-// const counter = require("./middlware/counter");
+const userRouter = require('./routers/user');
+const eventRouter = require('./routers/event');
 
 const app = express();
 
@@ -29,8 +29,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(process.env.PWD, 'public')));
 
 app.use('/', mainRouter);
-// app.use("/user", userRouter);
-// app.use('/user', books);
+app.use('/profile', userRouter);
+app.use('/event', eventRouter);
 
 app.get('/', (req, res) => res.render('Main'));
 
