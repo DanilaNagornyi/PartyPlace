@@ -1665,3 +1665,10 @@ section {
 .btn-go:hover {
   background: #FFBC5B;
 }
+
+
+/* новые добавления */
+
+.width-block {
+  word-wrap: break-word;
+}

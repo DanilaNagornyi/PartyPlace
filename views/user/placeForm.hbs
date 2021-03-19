@@ -27,21 +27,27 @@
           </ul>
           <!-- Tab panes -->
           <div class="tab-content tabs">
-            <div role="tabpanel" class="tab-pane fade in active" id="Section1">
-              <form class="form-horizontal" action="/events" method="POST">
+           <div role="tabpanel" class="tab-pane fade in active" id="Section1">
+              <form class="form-horizontal" action="/event/addplace" method="POST">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">ссылка на место</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1">
-                </div>
-                
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Средний чек</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1">
+                  <label for="exampleInputText1">Ссылка на место</label>
+                  <input type="text" class="form-control" id="exampleInputText1">
                 </div>
 
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Геолокация</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1">
+                  <label for="exampleFormControlTextarea1">Описание</label>
+                  <textarea maxlength="450" class="form-control" name="description" id="exampleFormControlTextarea1"
+                    rows="5"></textarea>
+                </div>
+                
+                <div class="form-group">
+                  <label for="exampleInputText1">Средний чек</label>
+                  <input type="text" class="form-control" id="exampleInputText1">
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputText1">Геолокация</label>
+                  <input type="text" class="form-control" id="exampleInputText1">
                 </div>
 
                 <div class="form-group">

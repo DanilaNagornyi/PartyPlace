@@ -24,33 +24,37 @@
             <li role="presentation" class="active"><a>создать мероприятие</a></li>
           </ul>
           <!-- Tab panes -->
-          <div class="tab-content tabs">
+         <div class="tab-content tabs">
             <div role="tabpanel" class="tab-pane fade in active" id="Section1">
-              <form class="form-horizontal">
+              <form class="form-horizontal" method="POST" action='/event/{{event._id}}'>
 
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Автор</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1">
+                  <label for="exampleInputEmail1">Название события</label>
+                  <input type="text" name="title" value="{{event.title}}" value="{{event.description}}"
+                    class="form-control" id="exampleInputEmail1">
                 </div>
 
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Событие</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1">
-                </div>
-
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Добавить фото</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1">
-                </div>
-                
                 <div class="form-group">
                   <label for="exampleFormControlTextarea1">Описание</label>
-                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  <textarea maxlength="550" class="form-control" name="description" id="exampleFormControlTextarea1"
+                    rows="5"></textarea>
                 </div>
 
                 <div class="form-group">
-              
-            
+                  <label for="exampleInputEmail1">Ссылка на фото</label>
+                  <input type="text" name="photo" value="{{event.photo}}" class="form-control" id="exampleInputEmail1">
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Город</label>
+                  <input type="text" name="location" value="{{event.location}}" class="form-control"
+                    id="exampleInputEmail1">
+                </div>
+
+
+                <div class="form-group">
+
+
                 </div>
                 <div class="form-group">
                   <button type="submit" class="btn btn-default">Добавить событие</button>
