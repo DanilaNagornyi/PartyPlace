@@ -6,7 +6,7 @@ const MongoStore = require('connect-mongo');
 const mongoose = require('mongoose');
 require('dotenv').config();
 const { mongoUrl, shortOption } = require('./db/config');
-const User = require('../PartyPlace/db/models/Users')
+const User = require('./db/models/Users');
 const mainRouter = require('./routers/main');
 const userRouter = require('./routers/user');
 const eventRouter = require('./routers/event');
@@ -53,11 +53,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(async (req, res, next) => {
   const userId = req.session?.user?.id
-  console.log(userId);
-  console.log(req.session);
+  // console.log(userId);
+  // console.log(req.session);
   if (userId) {
-    const currentUser = await User.findById(userId)
-    console.log(currentUser);
+    const currentUser = await User.findById(userId);
+    // console.log(currentUser);
     if (currentUser) {
       res.locals.name = currentUser.firstName
       res.locals.sername = currentUser.lastName
@@ -67,14 +67,11 @@ app.use(async (req, res, next) => {
       res.locals.year = currentUser.locationTown
       res.locals.city = currentUser.year
       res.locals.url = currentUser.avatar
-      console.log(res.locals.name, res.locals.email);
-      
+      // console.log(res.locals.name, res.locals.email)
     }
   }
-
   next()
-})
-
+});
 
 app.use(express.static(path.join(process.env.PWD, 'public')));
 
@@ -89,4 +86,4 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log('Server has started!');
   mongoose.connect(mongoUrl, shortOption, () => console.log('BASE is OK!!!'));
-})
+});
