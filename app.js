@@ -35,9 +35,9 @@ app.use('/event', eventRouter);
 
 app.get('/', (req, res) => res.render('Main'));
 
-const port = process.env.PORT ?? 3000;
+const PORT = process.env.PORT ?? 3000;
 
-app.listen(port, () => {
+app.listen(PORT, () => {
   console.log('Server has started!');
   mongoose.connect(mongoUrl, shortOption, () => console.log('BASE is OK!!!'));
 });
