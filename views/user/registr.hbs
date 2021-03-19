@@ -42,7 +42,7 @@
                 class="tab-pane fade in active"
                 id="Section1"
               >
-                <form class="form-horizontal">
+                <form class="form-horizontal" method="POST" action="/profile/signup">
                   <div class="form-group">
                     <label for="exampleInputEmail1">имя</label>
                     <input
@@ -84,13 +84,14 @@
                 </form>
               </div>
               <div role="tabpanel" class="tab-pane fade" id="Section2">
-                <form class="form-horizontal">
+                <form class="form-horizontal" name="registr" method="POST" action="/profile/signup">
                   <div class="form-group">
                     <label for="exampleInputEmail1">имя</label>
                     <input
                       type="text"
                       class="form-control"
                       id="exampleInputEmail1"
+                      name="firstName"
                     />
                   </div>
                   <div class="form-group">
@@ -99,6 +100,7 @@
                       type="text"
                       class="form-control"
                       id="exampleInputEmail1"
+                      name="lastName"
                     />
                   </div>
                   <div class="form-group">
@@ -107,6 +109,7 @@
                       type="email"
                       class="form-control"
                       id="exampleInputEmail1"
+                      name="email"
                     />
                   </div>
                   <div class="form-group">
@@ -115,6 +118,7 @@
                       type="password"
                       class="form-control"
                       id="exampleInputPassword1"
+                      name="pass"
                     />
                   </div>  
                   <div class="form-group">
@@ -123,6 +127,7 @@
                       type="password"
                       class="form-control"
                       id="exampleInputPassword1"
+                      name="phoneNumber"
                     />
                   </div>  
 
@@ -132,6 +137,7 @@
                       type="password"
                       class="form-control"
                       id="exampleInputPassword1"
+                      name="locationTown"
                     />
                   </div>  
                   <div class="form-group">
@@ -140,11 +146,12 @@
                       type="password"
                       class="form-control"
                       id="exampleInputPassword1"
+                      name="year"
                     />
                   </div>  
                   <div class="form-group">
                     <label for="exampleInputSelect1">группа</label>
-                    <select class="form-control" id="exampleInputSelect1">
+                    <select class="form-control" id="exampleInputSelect1" name="group">
                       <option class="form-control">ежи</option>
                       <option>пчелы</option>
                       <option>волки</option>
@@ -153,8 +160,12 @@
                       <option>бобры</option>
                     </select>
                   </div>
+                   <div class="form-group">
+                  <label for="photo">фото</label>
+                  <input type="url" name="avatar" class="form-control" id="exampleInputPassword1" required/>
+                </div>
                   <div class="form-group">
-                    <button type="submit" class="btn btn-default">
+                    <button type="submit" name="button" class="btn btn-default">
                       зарегистрироваться
                     </button>
                   </div>
