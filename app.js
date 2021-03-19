@@ -53,11 +53,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(async (req, res, next) => {
   const userId = req.session?.user?.id
-  console.log(userId);
-  console.log(req.session);
+  // console.log(userId);
+  // console.log(req.session);
   if (userId) {
     const currentUser = await User.findById(userId)
-    console.log(currentUser);
+    // console.log(currentUser);
     if (currentUser) {
       res.locals.name = currentUser.firstName
       res.locals.sername = currentUser.lastName
@@ -67,7 +67,7 @@ app.use(async (req, res, next) => {
       res.locals.year = currentUser.locationTown
       res.locals.city = currentUser.year
       res.locals.url = currentUser.avatar
-      console.log(res.locals.name, res.locals.email);
+      // console.log(res.locals.name, res.locals.email);
       
     }
   }
