@@ -534,9 +534,15 @@
         ymaps.ready(init);
         function init(){
             var myMap = new ymaps.Map("map", {
-                center: [55.76, 37.64],
+                center: [55.706771, 37.597288],
                 zoom: 7
             });
+            myPlacemark = new ymaps.Placemark([55.706771, 37.597288], {
+                hintContent: 'Москва!',
+                balloonContent: 'Школа Elbrus | Coding Bootcamp '
+            });
+            
+            myMap.geoObjects.add(myPlacemark);
         }
     </script>
 
