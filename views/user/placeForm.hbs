@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,35 +25,37 @@
           </ul>
           <!-- Tab panes -->
           <div class="tab-content tabs">
-           <div role="tabpanel" class="tab-pane fade in active" id="Section1">
-              <form class="form-horizontal" action="/event/addplace" method="POST">
+            <div role="tabpanel" class="tab-pane fade in active" id="Section1">
+              <form class="form-horizontal" method="POST">
+                <div class="form-group">
+                  <label for="exampleInputText1">Название</label>
+                  <input type="text" name="title" value="{{newEvent.title}}" class="form-control" id="exampleInputText1">
+                </div>
                 <div class="form-group">
                   <label for="exampleInputText1">Ссылка на место</label>
-                  <input type="text" class="form-control" id="exampleInputText1">
+                  <input type="text" name="linkToPlace" value="{{newEvent.linkToPlace}}" class="form-control" id="exampleInputText1">
                 </div>
-
+                <div class="form-group">
+                  <label for="exampleInputText1">Ссылка на фото</label>
+                  <input type="text" name="photo" value="{{newEvent.photo}}" class="form-control" id="exampleInputText1">
+                </div>
                 <div class="form-group">
                   <label for="exampleFormControlTextarea1">Описание</label>
-                  <textarea maxlength="450" class="form-control" name="description" id="exampleFormControlTextarea1"
+                  <textarea maxlength="450" class="form-control" name="description" value="{{newEvent.description}}" id="exampleFormControlTextarea1"
                     rows="5"></textarea>
-                </div>
-                
-                <div class="form-group">
-                  <label for="exampleInputText1">Средний чек</label>
-                  <input type="text" class="form-control" id="exampleInputText1">
                 </div>
 
                 <div class="form-group">
-                  <label for="exampleInputText1">Геолокация</label>
-                  <input type="text" class="form-control" id="exampleInputText1">
+                  <label for="exampleInputText1">Адрес</label>
+                  <input type="text" name="geolocation" value="{{newEvent.geolocation}}" class="form-control" id="exampleInputText1">
                 </div>
 
                 <div class="form-group">
                   <label for="exampleInputEmail1">Контакты</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1">
+                  <input type="text" name="contacts" value="{{newEvent.contacts}}" class="form-control" id="exampleInputEmail1">
                 </div>
                 <div class="form-group">
-              
+
                 </div>
                 <div class="form-group">
                   <button type="submit" class="btn btn-default">Предложить место</button>
