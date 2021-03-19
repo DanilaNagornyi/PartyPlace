@@ -13,7 +13,7 @@ const usersSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  password: {
+  pass: {
     type: String,
     required: true,
   },
@@ -43,6 +43,8 @@ const usersSchema = new mongoose.Schema({
   invitationsToEvents: [{ type: mongoose.Schema.Types.ObjectId, ref: 'events' }],
   plannedToVisitEvents: [{ type: mongoose.Schema.Types.ObjectId, ref: 'events' }],
   visitedEvents: [{ type: mongoose.Schema.Types.ObjectId, ref: 'events' }],
+  required: false,
 });
 
-module.exports = mongoose.model('users', usersSchema);
+const User = mongoose.model('Users', usersSchema);
+module.exports = User
