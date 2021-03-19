@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Dewi Bootstrap Template - Index</title>
+  <title>Elbrus event</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -69,10 +69,10 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero">
     <div class="hero-container" data-aos="fade-up" data-aos-delay="150">
-      <h1>ВЫПУСКНОЙ ГРУППЫ</h1>
+      <h1>{{newEvent.title}}</h1>
       <h2>Предложи свое место</h2>
       <div class="d-flex">
-        <a href="/event/addplace" class="btn-get-started scrollto">добавить место</a>
+        <a href="/event/{{newEvent._id}}/addplace" class="btn-get-started scrollto">добавить место</a>
       </div>
     </div>
   </section><!-- End Hero -->
@@ -88,25 +88,26 @@
         <div class="tab-content">
           <div class="tab-pane active show" id="tab-1">
             <div class="row">
-              <div  class=" width-block  col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+              <div class=" width-block  col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
                 {{!-- {{title}} --}}
 
                 <div class="section-title">
                   <h2>Что это будет?</h2>
-                  <p></p>
+                  <p>О событии</p>
                 </div>
                 <h3>{{newEvent.title}}</h3>
                 <ul>
-                  
-                <p>
-                  {{newEvent.description}}
-                </p>
+
+                  <p>
+                    {{newEvent.description}}
+                  </p>
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center">
                 <img src="{{newEvent.photo}}" alt="" class="img-fluid">
               </div>
             </div>
-              <p >Город: {{newEvent.location}}</p>
+            <p>Организатор: {{newEvent.creator}}</p>
+            <p>Город: {{newEvent.location}}</p>
           </div>
 
 
@@ -228,7 +229,7 @@
 
 
     <!-- ======= места ======= -->
-    <section id="places" >
+    <section id="places">
       <div class="container" data-aos="fade-up">
         <div class="section-title">
           <h2>Подбор мест</h2>
@@ -237,7 +238,159 @@
 
       </div>
     </section>
-    {{newPlaceToPage}}
+
+    {{#each places}}
+    <section id="places" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row justify-content-end">
+          <div class="col-lg-11">
+
+            <div class="row justify-content-end">
+
+              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+                <div class="count-box">
+                  <i class="bi bi-emoji-smile"></i>
+                  <span data-purecounter-start="0" data-purecounter-end="125" data-purecounter-duration="1"
+                    class="purecounter"></span>
+                  <p>Сколько человек пойдет</p>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+                <div class="count-box">
+                  <i class="bi bi-journal-richtext"></i>
+                  <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="1"
+                    class="purecounter"></span>
+                  <p>Голоса</p>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+                <div class="count-box">
+                  <i class="bi bi-clock"></i>
+                  <span data-purecounter-start="0" data-purecounter-end="35" data-purecounter-duration="1"
+                    class="purecounter"></span>
+                  <p>Дней до начала</p>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+                <div class="count-box">
+                  <i class="bi bi-award"></i>
+                  <span data-purecounter-start="0" data-purecounter-end="48" data-purecounter-duration="1"
+                    class="purecounter"></span>
+                  <p>Рейтинг</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-6 order-1 order-lg-2 text-center">
+            <img src="{{this.photo}}" alt=""
+              class="img-fluid">
+            {{!-- <div id="map" style="width: 600px; height: 400px"></div> --}}
+          </div>
+
+          <div class="col-lg-6 pt-3 pt-lg-0 content">
+            <h3> {{this.title}}</h3>
+            <p class="font-italic">
+              {{this.description}}
+            </p>
+            <p class="font-italic">
+              Ссылка на сайт: <a href="http://lawsonbar.ru/">{{this.linkToPlace}}</a>
+            </p> 
+            {{!-- <p class="font-italic">
+              Организатор: <a href="http://lawsonbar.ru/">{{this.linkToPlace}}</a>
+            </p>  --}}
+          </div>
+
+        </div>
+
+        <span><button class="btn-go">Такое... </button></span>
+        <span><button class="btn-go">Норм</button></span>
+        <span><button class="btn-go">Круто</button></span>
+      </div>
+    </section>
+    {{/each}}
+    <section id="places" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row justify-content-end">
+          <div class="col-lg-11">
+
+            <div class="row justify-content-end">
+
+              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+                <div class="count-box">
+                  <i class="bi bi-emoji-smile"></i>
+                  <span data-purecounter-start="0" data-purecounter-end="125" data-purecounter-duration="1"
+                    class="purecounter"></span>
+                  <p>Сколько человек пойдет</p>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+                <div class="count-box">
+                  <i class="bi bi-journal-richtext"></i>
+                  <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="1"
+                    class="purecounter"></span>
+                  <p>Голоса</p>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+                <div class="count-box">
+                  <i class="bi bi-clock"></i>
+                  <span data-purecounter-start="0" data-purecounter-end="35" data-purecounter-duration="1"
+                    class="purecounter"></span>
+                  <p>Дней до начала</p>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+                <div class="count-box">
+                  <i class="bi bi-award"></i>
+                  <span data-purecounter-start="0" data-purecounter-end="48" data-purecounter-duration="1"
+                    class="purecounter"></span>
+                  <p>Рейтинг</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-6 order-1 order-lg-2 text-center">
+            <img src="https://avatars.mds.yandex.net/get-altay/774756/2a0000015f4a9437e029c9a83e527ce6d544/XXL" alt=""
+              class="img-fluid">
+            {{!-- <div id="map" style="width: 600px; height: 400px"></div> --}}
+          </div>
+
+          <div class="col-lg-6 pt-3 pt-lg-0 content">
+            <h3> I LIKE BAR</h3>
+            <p class="font-italic">
+              I LIKE BAR - дебютный ресторан Владимира Перельмана (открыт в 2012 году), где с первого дня сложи­лось
+              все: мягкие диваны сулят расслаб­ление и уют, кухня обещает гастро­но­ми­чески выве­ренные, но простые и
+              внятные блюда с душой, а теплая атмо­сфера внушает желание возвра­щаться сюда снова - так же охотно, как к
+              себе домой. В меню царит дружба народов: кули­нарные хиты Азии сосед­ствуют с хрустящей пиццей
+            </p>
+
+          </div>
+
+        </div>
+
+        <span><button class="btn-go">Такое... </button></span>
+        <span><button class="btn-go">Норм</button></span>
+        <span><button class="btn-go">Круто</button></span>
+      </div>
+    </section><!-- End About Section -->
     <section id="places" class="about">
       <div class="container" data-aos="fade-up">
 
@@ -290,76 +443,6 @@
 
           <div class="col-lg-6 order-1 order-lg-2 text-center">
             <img src="/event/img/features-1.jpg" alt="" class="img-fluid">
-            {{!-- <div id="map" style="width: 600px; height: 400px"></div> --}}
-          </div>
-
-          <div class="col-lg-6 pt-3 pt-lg-0 content">
-            <h3>Бар у метро Театральная</h3>
-            <p class="font-italic">
-              Веселое место где можно поорать и попеть караоке
-            </p>
-
-          </div>
-
-        </div>
-
-        <span><button class="btn-go">Такое... </button></span>
-        <span><button class="btn-go">Норм</button></span>
-        <span><button class="btn-go">Круто</button></span>
-      </div>
-    </section><!-- End About Section -->
-<section id="places" class="about">
-      <div class="container" data-aos="fade-up">
-
-        <div class="row justify-content-end">
-          <div class="col-lg-11">
-
-            <div class="row justify-content-end">
-
-              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
-                <div class="count-box">
-                  <i class="bi bi-emoji-smile"></i>
-                  <span data-purecounter-start="0" data-purecounter-end="125" data-purecounter-duration="1"
-                    class="purecounter"></span>
-                  <p>Сколько человек пойдет</p>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
-                <div class="count-box">
-                  <i class="bi bi-journal-richtext"></i>
-                  <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="1"
-                    class="purecounter"></span>
-                  <p>Голоса</p>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
-                <div class="count-box">
-                  <i class="bi bi-clock"></i>
-                  <span data-purecounter-start="0" data-purecounter-end="35" data-purecounter-duration="1"
-                    class="purecounter"></span>
-                  <p>Дней до начала</p>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
-                <div class="count-box">
-                  <i class="bi bi-award"></i>
-                  <span data-purecounter-start="0" data-purecounter-end="48" data-purecounter-duration="1"
-                    class="purecounter"></span>
-                  <p>Рейтинг</p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-6 order-1 order-lg-2 text-center">
-            <img src="/event/img/features-1.jpg" alt="" class="img-fluid">
           </div>
 
           <div class="col-lg-6 pt-3 pt-lg-0 content">
@@ -378,7 +461,7 @@
       </div>
     </section>
 
-   <div id="map" style="width: 100%; height: 300px"></div>
+    <div id="map" style="width: 100%; height: 300px"></div>
 
     <!-- ======= участники ======= -->
     <section id="team" class="team section-bg">
@@ -446,102 +529,103 @@
 
 
 
-  
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
 
-          <div class="col-lg-3 col-md-6">
-            <div class="footer-info">
-              <h3>Elbrus Bootcamp</h3>
-              <p>
-                Москва, ул.Орджоникидзе, д.11 стр.10 (м. Ленинский проспект)<br><br>
-                <strong>Phone:</strong> +7 499 938-68-24<br>
-                <strong>Email:</strong> info@elbrusboot.camp<br>
-              </p>
-              <div class="social-links mt-3">
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+
+            <div class="col-lg-3 col-md-6">
+              <div class="footer-info">
+                <h3>Elbrus Bootcamp</h3>
+                <p>
+                  Москва, ул.Орджоникидзе, д.11 стр.10 (м. Ленинский проспект)<br><br>
+                  <strong>Phone:</strong> +7 499 938-68-24<br>
+                  <strong>Email:</strong> info@elbrusboot.camp<br>
+                </p>
+                <div class="social-links mt-3">
+                  <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                  <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                </div>
               </div>
             </div>
+
+            <div class="col-lg-2 col-md-6 footer-links">
+              <h4>Вернуться к разделам</h4>
+              <ul>
+                <li><i class="bx bx-chevron-right"></i> <a href="#hero">Домой</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="#services">О проекте</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="#about-boxes">События</a></li>
+              </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h4>Персональные данные</h4>
+              <ul>
+                <li><i class="bx bx-chevron-right"></i> <a href="/profile">Личный кабинет</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="#">Регистрация</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="#">Авторизация</a></li>
+              </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-6 footer-newsletter">
+              <h4>Подпишись</h4>
+              <p>Подпишись на рассылку новых мероприятий </p>
+              <form action="" method="post">
+                <input type="email" name="email"><input type="submit" value="Подписаться">
+              </form>
+
+            </div>
+
           </div>
-
-          <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Вернуться к разделам</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#hero">Домой</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#services">О проекте</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#about-boxes">События</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Персональные данные</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="/profile">Личный кабинет</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Регистрация</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Авторизация</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Подпишись</h4>
-            <p>Подпишись на рассылку новых мероприятий </p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Подписаться">
-            </form>
-
-          </div>
-
         </div>
       </div>
-    </div>
 
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Elbrus bootcamp</span></strong>. All Rights Reserved
+      <div class="container">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Elbrus bootcamp</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should re/main intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/ -->
+          Designed by <a href="https://elbrusboot.camp/">Elbrus bootcamp</a>
+        </div>
       </div>
-      <div class="credits">
-        <!-- All the links in the footer should re/main intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/ -->
-        Designed by <a href="https://elbrusboot.camp/">Elbrus bootcamp</a>
-      </div>
-    </div>
-  </footer><!-- End Footer -->
+    </footer><!-- End Footer -->
 
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS Files -->
-  <script src="/event/vendor/aos/aos.js"></script>
-  <script src="/event/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="/event/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="/event/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="/event/vendor/php-email-form/validate.js"></script>
-  <script src="/event/vendor/purecounter/purecounter.js"></script>
-  <script src="/event/vendor/swiper/swiper-bundle.min.js"></script>
+    <!-- Vendor JS Files -->
+    <script src="/event/vendor/aos/aos.js"></script>
+    <script src="/event/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/event/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="/event/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/event/vendor/php-email-form/validate.js"></script>
+    <script src="/event/vendor/purecounter/purecounter.js"></script>
+    <script src="/event/vendor/swiper/swiper-bundle.min.js"></script>
 
 
-   <script src="https://api-maps.yandex.ru/2.1/?apikey=e1eadd04-7c47-4d9d-bc35-1f156a54f851&lang=ru_RU" type="text/javascript">
-    </script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=e1eadd04-7c47-4d9d-bc35-1f156a54f851&lang=ru_RU"
+      type="text/javascript">
+      </script>
     <script type="text/javascript">
-        ymaps.ready(init);
-        function init(){
-            var myMap = new ymaps.Map("map", {
-                center: [55.76, 37.64],
-                zoom: 7
-            });
-        }
+      ymaps.ready(init);
+      function init() {
+        var myMap = new ymaps.Map("map", {
+          center: [55.76, 37.64],
+          zoom: 7
+        });
+      }
     </script>
 
-  <!-- Template Main JS File -->
-  <script src="/event/js/main.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/event/js/main.js"></script>
 
 </body>
 

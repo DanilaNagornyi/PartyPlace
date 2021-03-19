@@ -11,6 +11,11 @@ const placeSchema = new mongoose.Schema({
   description: { type: String, required: true },
   geolocation: String,
   raiting: [Number],
+  event: { type: mongoose.Schema.Types.ObjectId, ref: 'events' },
+  creator: { type: mongoose.Schema.Types.ObjectId, ref: 'users' },
+  contacts: String,
 });
 
-module.exports = mongoose.model('places', placeSchema);
+const Place = mongoose.model('places', placeSchema);
+
+module.exports = Place;
