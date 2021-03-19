@@ -611,18 +611,24 @@
     <script src="/event/vendor/swiper/swiper-bundle.min.js"></script>
 
 
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=e1eadd04-7c47-4d9d-bc35-1f156a54f851&lang=ru_RU"
-      type="text/javascript">
-      </script>
-    <script type="text/javascript">
-      ymaps.ready(init);
-      function init() {
-        var myMap = new ymaps.Map("map", {
-          center: [55.76, 37.64],
-          zoom: 7
-        });
-      }
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=e1eadd04-7c47-4d9d-bc35-1f156a54f851&lang=ru_RU" type="text/javascript">
     </script>
+    <script type="text/javascript">
+        ymaps.ready(init);
+        function init(){
+            var myMap = new ymaps.Map("map", {
+                center: [55.706771, 37.597288],
+                zoom: 7
+            });
+            myPlacemark = new ymaps.Placemark([55.706771, 37.597288], {
+                hintContent: 'Москва!',
+                balloonContent: 'Школа Elbrus | Coding Bootcamp '
+            });
+            myMap.geoObjects.add(myPlacemark);
+        }
+    </script>
+  <!-- Template Main JS File -->
+  <script src="/event/js/main.js"></script>
 
     <!-- Template Main JS File -->
     <script src="/event/js/main.js"></script>
