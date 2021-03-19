@@ -67,7 +67,8 @@ app.use(async (req, res, next) => {
       res.locals.year = currentUser.locationTown
       res.locals.city = currentUser.year
       res.locals.url = currentUser.avatar
-      // console.log(res.locals.name, res.locals.email)
+      // console.log(res.locals.name, res.locals.email);
+      
     }
   }
   next()
