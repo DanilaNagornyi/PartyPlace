@@ -43,11 +43,8 @@ router.post('/', async (req, res) => {
 });
 
 router.get('/:id', async (req, res) => {
-  const newEvent = await Event.findById(req.params.id)
-
+  const newEvent = await Event.findById(req.params.id);
   res.render('event', { newEvent });
 });
-
-
 
 module.exports = router;
