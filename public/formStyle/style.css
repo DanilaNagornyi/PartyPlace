@@ -1,5 +1,6 @@
-
-
+body {
+  background: linear-gradient(#2f0b45,#2f0b45) !important;
+}
 
 a:hover,a:focus{
  outline: none;
