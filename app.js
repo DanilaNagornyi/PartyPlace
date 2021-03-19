@@ -3,6 +3,7 @@ const path = require('path');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const mongoose = require('mongoose');
+require('dotenv').config();
 const { mongoUrl, shortOption } = require('./db/config');
 
 const mainRouter = require('./routers/main');
@@ -34,7 +35,9 @@ app.use('/event', eventRouter);
 
 app.get('/', (req, res) => res.render('Main'));
 
-app.listen(3000, () => {
+const port = process.env.PORT ?? 3000;
+
+app.listen(port, () => {
   console.log('Server has started!');
   mongoose.connect(mongoUrl, shortOption, () => console.log('BASE is OK!!!'));
 });
