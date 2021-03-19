@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const eventsSchema = new mongoose.Schema({
+const eventSchema = new mongoose.Schema({
   title: { type: String, required: true },
   photo: {
     type: String,
@@ -15,8 +15,9 @@ const eventsSchema = new mongoose.Schema({
   creator: { type: mongoose.Schema.Types.ObjectId, ref: 'users' },
   participants: [{ type: mongoose.Schema.Types.ObjectId, ref: 'users' }],
   comments: [String],
-  place: { type: mongoose.Schema.Types.ObjectId, ref: 'places' },
+  place: [{ type: mongoose.Schema.Types.ObjectId, ref: 'places' }],
   raiting: [Number],
 });
+const Event = mongoose.model('events', eventSchema);
 
-module.exports = mongoose.model('events', eventsSchema);
+module.exports = Event;
