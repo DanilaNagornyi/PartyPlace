@@ -12,6 +12,6 @@
 
 const shortOption = { useNewUrlParser: true, useUnifiedTopology: true };
 
-const mongoUrl = 'mongodb+srv://Ivan:atlas2021@cluster0.madho.mongodb.net/PartyPlace';
+const mongoUrl = process.env.DB_CONNECTION_ADRESS;
 
 module.exports = { shortOption, mongoUrl };
