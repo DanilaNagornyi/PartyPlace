@@ -6,9 +6,9 @@ const router = Router();
 
 router.get('/', async (req, res) => {
   // const findUser = await User.find(req.session?.user?.id);
-  console.log('req.session?.user.id----->', req.session?.user.id);
+  // console.log('req.session?.user.id----->', req.session?.user.id);
   try {
-    const events = await Event.find({ creator: req.session?.user.id });
+    const events = await Event.find({ creator: req.session?.user?.id });
     console.log('events----->', events);
 
     res.render('profile', { events });
