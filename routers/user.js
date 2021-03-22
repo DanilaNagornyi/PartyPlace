@@ -1,14 +1,28 @@
 const { Router } = require('express');
-const {userSignup} = require('../src/controllers')
 const User = require('../db/models/Users')
-const router = Router();
+const userRouter = Router();
+const { userSignupRender, userSignup, userSigninRender, userSignin, userSignout,
+} = require('../src/controllers')
 
-router.get('/', async (req, res) => {
+userRouter.get('/', async (req, res) => {
 const findUser = await User.findById
   res.render('profile');
 });
 
-router.post('/signup/', userSignup);
+// router.post('/signup/', userSignup);
+
+userRouter.route('/signup')
+  .get(userSignupRender)
+  .post(userSignup)
+
+userRouter.route('/signin')
+  .get(userSigninRender)
+  .post(userSignin)
+
+userRouter.route('/signout')
+  .get(userSignout)
+
+module.exports = userRouter
 
 
-module.exports = router;
+// module.exports = router;

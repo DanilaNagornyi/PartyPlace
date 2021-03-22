@@ -39,8 +39,9 @@ console.log('userSignup');
 
 const userSignin = async (req, res) => {
   const {email, pass} = req.body;
+  console.log('1', req.body);
   if (email && pass) {
-    const currentUser = await Users.findOne( {email})
+    const currentUser = await Users.findOne( {email} )
     if (currentUser && (await bcrypt.compare(pass , currentUser.pass))) {
       req.session.user = {
         id: currentUser._id,
@@ -56,6 +57,9 @@ const userSignout = async (req, res) => {
   req.session.destroy ((err) => {
     if (err) return res.redirect('/')
   })
+
+  res.clearCookie(req.app.get('cookieName'))
+  return res.redirect('/')
 }
 
 module.exports = {

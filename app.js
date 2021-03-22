@@ -83,7 +83,6 @@ app.use('/profile', userRouter);
 app.use('/event', eventRouter);
 
 app.get('/', (req, res) => res.render('Main'));
-
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
