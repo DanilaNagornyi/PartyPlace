@@ -17,6 +17,8 @@ const eventSchema = new mongoose.Schema({
   comments: [String],
   place: [{ type: mongoose.Schema.Types.ObjectId, ref: 'places' }],
   raiting: [Number],
+  date: String,
+  time: String,
 });
 const Event = mongoose.model('events', eventSchema);
 

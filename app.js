@@ -52,26 +52,25 @@ app.set('views', path.join(process.env.PWD, 'views'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(async (req, res, next) => {
-  const userId = req.session?.user?.id
+  const userId = req.session?.user?.id;
   // console.log(userId);
   // console.log(req.session);
   if (userId) {
     const currentUser = await User.findById(userId);
     // console.log(currentUser);
     if (currentUser) {
-      res.locals.name = currentUser.firstName
-      res.locals.sername = currentUser.lastName
-      res.locals.email = currentUser.email
-      res.locals.phone = currentUser.phoneNumber
-      res.locals.city = currentUser.locationTown
-      res.locals.year = currentUser.locationTown
-      res.locals.city = currentUser.year
-      res.locals.url = currentUser.avatar
+      res.locals.name = currentUser.firstName;
+      res.locals.sername = currentUser.lastName;
+      res.locals.email = currentUser.email;
+      res.locals.phone = currentUser.phoneNumber;
+      res.locals.city = currentUser.locationTown;
+      res.locals.year = currentUser.locationTown;
+      res.locals.city = currentUser.year;
+      res.locals.url = currentUser.avatar;
       // console.log(res.locals.name, res.locals.email);
-      
     }
   }
-  next()
+  next();
 });
 
 app.use(express.static(path.join(process.env.PWD, 'public')));

@@ -266,7 +266,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover, .navbar .dropdown ul li:hover > a {
-  color: #ff4a17;
+  color: #FFBC5B;
 }
 
 .navbar .dropdown:hover > ul {
@@ -286,6 +286,10 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   left: 100%;
   visibility: visible;
+}
+
+.nav-linkModal {
+  visibility: hidden;
 }
 
 @media (max-width: 1366px) {
@@ -315,6 +319,10 @@ h1, h2, h3, h4, h5, h6 {
   }
   .navbar ul {
     display: none;
+  }
+
+  .nav-linkModal {
+    visibility: visible;
   }
 }
 
@@ -357,7 +365,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
-  color: #ff4a17;
+  color: #FFBC5B;
 }
 
 .navbar-mobile .getstarted {
@@ -389,7 +397,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-mobile .dropdown ul a:hover, .navbar-mobile .dropdown ul .active:hover, .navbar-mobile .dropdown ul li:hover > a {
-  color: #ff4a17;
+  color: #FFBC5B;
 }
 
 .navbar-mobile .dropdown > .dropdown-active {

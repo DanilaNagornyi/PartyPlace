@@ -35,7 +35,7 @@ router.post('/', async (req, res) => {
       comments,
       location,
       place,
-      creator: req.session.userId,
+      creator: req.session.user.id,
     });
     return res.redirect(`/event/${newEvent._id}`);
   } catch (error) {
