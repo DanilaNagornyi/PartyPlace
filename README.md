@@ -5,7 +5,7 @@
 <a href="https://party-place.herokuapp.com/">
   <div>
    <img align="left" alt="party-place" width="22px" src="https://i.ya-webdesign.com/images/internet-transparent-globe-8.png" />
-   <h3><a href="https://party-place.herokuapp.com/"> ### Сайт проекта 🖥 -Party-Place site</a></h3>
+   <h3><a href="https://party-place.herokuapp.com/">Сайт проекта  Party-Place </a></h3>
   </div>
 </a>
 
