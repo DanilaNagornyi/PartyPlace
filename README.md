@@ -27,7 +27,8 @@
 <br/>
 <br/>
 
-Тут скрин события внутри точнее гиф
+![pp-720-2](https://user-images.githubusercontent.com/64028251/115545747-d5349600-a2ac-11eb-8916-adfcc2f21c8e.gif)
+
 
 <br/>
 <br/>
@@ -37,7 +38,7 @@
 <br/>
 <br/>
 
-Скрин места
+<img width="1680" alt="Снимок экрана 2021-04-21 в 14 12 58" src="https://user-images.githubusercontent.com/64028251/115545821-ebdaed00-a2ac-11eb-9fc5-87cc244fe248.png">
 
 <br/>
 <br/>
