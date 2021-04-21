@@ -2,7 +2,7 @@ const { Router } = require('express');
 const User = require('../db/models/Users');
 const userRouter = Router();
 const { userSignupRender, userSignup, userSigninRender, userSignin, userSignout,
-} = require('../src/controllers')
+} = require('../src/controllers');
 
 userRouter.get('/', async (req, res) => {
 const findUser = await User.findById;

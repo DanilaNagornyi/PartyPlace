@@ -63,7 +63,6 @@ router.post('/:id/addplace/', async (req, res) => {
     contacts,
   } = req.body;
   const { id: event } = req.params;
-  // console.log('addplace ==========>', req.body);
   try {
     const newEvent = await Place.create({
       title,
@@ -83,8 +82,4 @@ router.post('/:id/addplace/', async (req, res) => {
   }
 });
 
-// router.post('/:id/addplace', async (req, res) => {
-//   const places = await Place.find({ event: req.params.id });
-//   res.render('event', { places });
-// });
 module.exports = router;

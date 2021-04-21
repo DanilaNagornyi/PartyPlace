@@ -20,17 +20,6 @@ const userSignup = async (req, res) => {
     locationTown,
   } = req.body;
   console.log(req.body);
-  // if (
-  //   firstName &&
-  //   lastName &&
-  //   email &&
-  //   plainPass &&
-  //   group &&
-  //   year &&
-  //   avatar &&
-  //   phoneNumber &&
-  //   locationTown
-  // ) {
     if (
       Object.values(req.body).every((el) => !!el)
     ) {

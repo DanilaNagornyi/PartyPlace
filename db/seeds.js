@@ -77,13 +77,11 @@ const events = [
 async function usersSeeder() {
   await Users.deleteMany();
   await Users.insertMany(users);
-  // await mongoose.disconnect();
 }
 
 async function placesSeeder() {
   await Places.deleteMany();
   await Places.insertMany(places);
-  // await mongoose.disconnect();
 }
 
 async function eventSeeder() {
@@ -98,9 +96,3 @@ async function foo() {
   egor.visitedEvents.save();
   await mongoose.disconnect();
 }
-
-// foo();
-
-// usersSeeder();
-// placesSeeder();
-// eventSeeder();
