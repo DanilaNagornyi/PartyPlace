@@ -1,28 +1,23 @@
 const { Router } = require('express');
-const User = require('../db/models/Users')
+const User = require('../db/models/Users');
 const userRouter = Router();
 const { userSignupRender, userSignup, userSigninRender, userSignin, userSignout,
 } = require('../src/controllers')
 
 userRouter.get('/', async (req, res) => {
-const findUser = await User.findById
+const findUser = await User.findById;
   res.render('profile');
 });
 
-// router.post('/signup/', userSignup);
-
 userRouter.route('/signup')
   .get(userSignupRender)
-  .post(userSignup)
+  .post(userSignup);
 
 userRouter.route('/signin')
   .get(userSigninRender)
-  .post(userSignin)
+  .post(userSignin);
 
 userRouter.route('/signout')
-  .get(userSignout)
+  .get(userSignout);
 
-module.exports = userRouter
-
-
-// module.exports = router;
+module.exports = userRouter;
